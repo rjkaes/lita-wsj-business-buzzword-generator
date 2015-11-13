@@ -188,7 +188,7 @@ module Lita
            )
 
       def buzzword(response)
-        response.reply business_speak
+        response.reply %(“#{business_speak}”)
       end
 
       private
