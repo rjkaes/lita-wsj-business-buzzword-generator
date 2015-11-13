@@ -7,26 +7,26 @@ module Lita
     class WsjBusinessBuzzwordGenerator < Handler
       THE_PHRASES = [
         'Looking forward to 2014, **NOUN** will be key to our ability to **VERB** the **NOUN** **ADVERB**.',
-        'This product will **VERB** **NOUN** and demonstrate **ADJ** performance in **NOUN**.',
-        'We need to move now. Our competitors already **VERB** **ADJ** **NOUN**.',
+        'This product will **VERB** **NOUN** and demonstrate **ADJECTIVE** performance in **NOUN**.',
+        'We need to move now. Our competitors already **VERB** **ADJECTIVE** **NOUN**.',
         '**VERB** the **NOUN** **ADVERB**. **BSE**.',
         '**BSE_START**, the marketplace has changed. **VERB** **ADVERB** or **VERB**.',
-        'If we **VERB**, we will unfortunately be lagging in **ADJ** **NOUN**.',
+        'If we **VERB**, we will unfortunately be lagging in **ADJECTIVE** **NOUN**.',
         'People, in the coming year, we need to **ADVERB** **VERB** our **NOUN**.',
-        '**BSE_START**, it\'s time to act with **ADJ** **NOUN** and **VERB** our team **NOUN**.',
-        'Our **NOUN** is the most **ADJ** thing at our company. Do your best to **VERB** it.',
-        'All: Please note the new policy -- Starting next calendar year, we will **VERB** on **ADJ** **NOUN**. **BSE**.',
+        '**BSE_START**, it\'s time to act with **ADJECTIVE** **NOUN** and **VERB** our team **NOUN**.',
+        'Our **NOUN** is the most **ADJECTIVE** thing at our company. Do your best to **VERB** it.',
+        'All: Please note the new policy -- Starting next calendar year, we will **VERB** on **ADJECTIVE** **NOUN**. **BSE**.',
         'I\'m disappointed in the way we **VERB** our **NOUN**. Let\'s please **VERB** our efforts.',
-        'Our **NOUN** center is focused on new ways to **VERB** the consumer space through **ADJ** deployments of **NOUN**.',
-        'The tax-and-accounting department has issues with the **ADJ** way you **ADVERB** treated this **ADJ** transaction.',
-        'As part of our review of **NOUN**, we have decided to move forward with **ADJ** **NOUN**. **BSE**.',
-        'Your colleagues are increasingly **ADJ**, so it\'s important that we **VERB** accordingly.',
+        'Our **NOUN** center is focused on new ways to **VERB** the consumer space through **ADJECTIVE** deployments of **NOUN**.',
+        'The tax-and-accounting department has issues with the **ADJECTIVE** way you **ADVERB** treated this **ADJECTIVE** transaction.',
+        'As part of our review of **NOUN**, we have decided to move forward with **ADJECTIVE** **NOUN**. **BSE**.',
+        'Your colleagues are increasingly **ADJECTIVE**, so it\'s important that we **VERB** accordingly.',
         'If the challenges persist, we should immediately **VERB**.',
         'Next quarter we will launch our new **NOUN**-killer which will **VERB** the **NOUN** **ADVERB**.',
-        'This sector has **ADJ** **NOUN**. **BSE**.',
-        'Our team leader just gave us a **ADJ** pep talk.',
-        'The boss gathered the managers for an emergency meeting and said **ADJ** **NOUN**. **BSE**.',
-        'My co-workers have been **ADJ** **NOUN** since the reorganization.',
+        'This sector has **ADJECTIVE** **NOUN**. **BSE**.',
+        'Our team leader just gave us a **ADJECTIVE** pep talk.',
+        'The boss gathered the managers for an emergency meeting and said **ADJECTIVE** **NOUN**. **BSE**.',
+        'My co-workers have been **ADJECTIVE** **NOUN** since the reorganization.',
       ]
       NOUNS = [
         'agility',
@@ -194,7 +194,7 @@ module Lita
       private
 
       def business_speak
-        THE_PHRASES.sample.gsub(/\*\*(NOUN|VERB|ADJ|ADVERB|BSE|BSE_START)\*\*/) { |_|
+        THE_PHRASES.sample.gsub(/\*\*(NOUN|VERB|ADJECTIVE|ADVERB|BSE|BSE_START)\*\*/) { |_|
           self.class.const_get("#{$1}S").sample
         }
       end
