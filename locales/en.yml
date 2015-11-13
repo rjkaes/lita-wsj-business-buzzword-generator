@@ -1,0 +1,4 @@
+en:
+  lita:
+    handlers:
+      wsj_business_buzzword_generator:
