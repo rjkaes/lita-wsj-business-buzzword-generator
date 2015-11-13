@@ -179,9 +179,8 @@ module Lita
         horizontally
       )
 
-      route(/^buzzword$/,
+      route(/buzz([- ])?words?/,
             :buzzword,
-            command: true,
             help: {
               'buzzword' => 'Give us a business phrase filled with buzzwords.'
             },
